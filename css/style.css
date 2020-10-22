@@ -1,0 +1,213 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  /* Backgrounds */
+  --bgButtonHover: linear-gradient(135deg, hsl(0, 80%, 86%), hsla(0, 52%, 80%, 0.781));
+  /* Primary */
+  --desaturatedRed: rgb(206, 151, 151);
+  --softRed: rgb(249, 98, 98);
+  /* Neutral */
+  --darkGrayishRed: rgb(65, 58, 58);
+  /* Gradients */
+  --gradient1: linear-gradient(135deg, #ffffff, #fff5f5);
+  --gradientButton: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+}
+
+body{
+  width: 100%;
+  font-size: 16px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+header{
+  width: 100%;
+  padding: 30px;
+}
+
+header .logo{
+  width: 150px;
+}
+
+.wrapper{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  background-image: var(--gradient1);
+}
+
+.wrapper .right{
+  margin: 0 auto;
+  width: 100%;
+  height: 250px;
+  background-image: url('../images/hero-mobile.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.wrapper .left{
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper .left h1{
+  color: var(--desaturatedRed);
+  font-weight: 300;
+  font-size: 3.2rem;
+  line-height: 3.3rem;
+  letter-spacing: .5rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.wrapper .left h1 span{
+  font-weight: 400;
+  color: var(--darkGrayishRed);
+}
+
+.wrapper .left .text-left{
+  color: var(--desaturatedRed);
+  line-height: 1.5rem;
+  margin-bottom: 40px;
+}
+
+.wrapper form{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+.wrapper form input{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding-left: 30px;
+  border-radius: 50px;
+  border: 1px solid var(--desaturatedRed);
+  left: 0;
+  top: 0;
+  font-size: 1.1rem;
+}
+
+.wrapper form input::placeholder{
+  color: var(--desaturatedRed);
+  opacity: .8;
+}
+
+.wrapper form button{
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 75px;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  background: var(--gradientButton);
+  box-shadow: 0 20px 18px 1px rgba(249, 98, 98, 0.178);
+}
+
+.wrapper form button:hover{
+  background-image: var(--bgButtonHover);
+  box-shadow: 0 0 13px 2px #f4aaabbf;
+}
+
+.wrapper form .error-icon{
+  position: absolute;
+  top: 24%;
+  right: 85px;
+  display: none;
+}
+
+.wrapper form .error-text{
+  position: absolute;
+  left: 10px;
+  top: 60px;
+  font-size: 1rem;
+  color: var(--softRed);
+  display: none;
+}
+
+.wrapper form.error .error-icon{
+  display: block;
+}
+
+.wrapper form.error .error-text{
+  display: block;
+}
+
+.wrapper form.error input{
+  border: 2px solid var(--softRed);
+}
+
+@media only screen and (min-width: 768px){
+  header{
+    position: absolute;
+    padding-left: 10%;
+  }
+
+  header .logo img{
+    width: 180px;
+  }
+
+  .wrapper{
+    flex-direction: row-reverse;
+    padding: 0;
+  }
+
+  .wrapper .right{
+    width: 80%;
+    height: 100vh;
+    background-image: url('../images/hero-desktop.jpg');
+  }
+
+  .wrapper .left{
+    width: 100%;
+    height: 100vh;
+    padding: 20vh 10%;
+    text-align: left;
+    background-image: url('../images/bg-pattern-desktop.svg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .wrapper .left .title{
+    width: 100%;
+    font-size: 4rem;
+    line-height: 5.5rem;
+    text-align: left;
+  }
+
+  .wrapper .left .text-left{
+    max-width: 600px;
+    margin-left: 0;
+    font-size: 1.1rem;
+  }
+
+  .wrapper form{
+    margin-left: 0;
+    max-width: 600px;
+  }
+
+  .wrapper form button{
+    width: 80px;
+  }
+}
